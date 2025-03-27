@@ -29,8 +29,13 @@ async function dataReceived() {
 async function fetchApi(){
 // Fetcher data fra catFact
 const data = await fetch('https://catfact.ninja/facts');
-
+console.log(data);
 // Parser til JSON til array
+const response = await data.json();
+console.log(response);
+console.log(response.data);
+console.log(response.data[0]);
+console.log(response.data[0].fact);
 }
 
 fetchApi();
