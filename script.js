@@ -46,7 +46,7 @@ const responseData = response.data
 
 responseData.forEach((item) => {
     const factItem = item.fact;
-console.log(factItem);
+// Alt ok så slett: console.log(factItem);
 
 // Lage en p-element til HTML
 
@@ -86,16 +86,17 @@ async function hentNorris(){
 const data = await fetch('https://api.chucknorris.io/jokes/random');
 console.log(data);
 
-// Parser til JSON til array
 const response = await data.json();
+ChuckText.textContent = response.value
 console.log(response.value);
-
-
 }
 
 hentNorris();
 
 const ChuckBtn = document.querySelector('#ChuckBtn')
-ChuckBtn.addEventListener(
-    getChuckApi()
+
+ChuckBtn.addEventListener('click',
+    hentNorris
 )
+
+let ChuckText = document.querySelector('#ChuckText')
