@@ -27,14 +27,17 @@ async function dataReceived() {
 // API-link: https://catfact.ninja/facts
 
 async function fetchApi(){
-// Fetcher data fra catFact
+
+    // Fetcher data fra catFact
 const data = await fetch('https://catfact.ninja/facts');
 console.log(data);
+
 // Parser til JSON til array
 const response = await data.json();
 console.log(response);
 console.log(response.data);
 console.log(response.data[0]);
+
 //console.log(response.data[0].fact); 
 
 //Lagre array av objects i en variabel
@@ -63,7 +66,6 @@ displayCatFact.appendChild(viewCatFact);
 
 fetchApi();
 
-
 // Hele arrayet
 // Vi finner data array, array med objects
 // Vi velger et spesifikt array
@@ -76,3 +78,24 @@ fetchApi();
 //VI LAGER EN CHUCK NORRIS KNAPP
 
 //API-link: https://api.chucknorris.io/jokes/random
+
+// dette klarer jeg ikke - SOS!
+
+async function hentNorris(){
+
+const data = await fetch('https://api.chucknorris.io/jokes/random');
+console.log(data);
+
+// Parser til JSON til array
+const response = await data.json();
+console.log(response.value);
+
+
+}
+
+hentNorris();
+
+const ChuckBtn = document.querySelector('#ChuckBtn')
+ChuckBtn.addEventListener(
+    getChuckApi()
+)
