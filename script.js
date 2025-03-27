@@ -35,7 +35,7 @@ const response = await data.json();
 console.log(response);
 console.log(response.data);
 console.log(response.data[0]);
-console.log(response.data[0].fact); 
+//console.log(response.data[0].fact); 
 
 //Lagre array av objects i en variabel
 
@@ -46,9 +46,17 @@ responseData.forEach((item) => {
 console.log(factItem);
 
 // Lage en p-element til HTML
+
+const viewCatFact = document.createElement("p");
+
 //Legge factItem inn som tekst til p
+viewCatFact.textContent = factItem
+
 //Finne id som heter displayCatFact og hente den inn medquerySelector
+const displayCatFact = document.querySelector('#displayCatFact')
+
 //Legge til p på displaCatFact
+displayCatFact.appendChild(viewCatFact);
 });
 
 }
