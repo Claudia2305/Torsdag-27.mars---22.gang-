@@ -35,7 +35,22 @@ const response = await data.json();
 console.log(response);
 console.log(response.data);
 console.log(response.data[0]);
-console.log(response.data[0].fact);
+console.log(response.data[0].fact); 
+
+//Lagre array av objects i en variabel
+
+const responseData = response.data
+
+responseData.forEach((item) => {
+    const factItem = item.fact;
+console.log(factItem);
+
+// Lage en p-element til HTML
+//Legge factItem inn som tekst til p
+//Finne id som heter displayCatFact og hente den inn medquerySelector
+//Legge til p på displaCatFact
+});
+
 }
 
 fetchApi();
